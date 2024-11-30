@@ -22,6 +22,9 @@ class Nav extends React.Component {
         <NavLink activeClassName="active" to="/about">
           About
         </NavLink>
+        <NavLink activeClassName="active" to="/user">
+          User
+        </NavLink>
       </div>
     );
   }
