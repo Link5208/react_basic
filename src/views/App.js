@@ -6,7 +6,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Nav from "./Nav/Nav";
 import Home from "./Example/Home";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 
 function App() {
   return (
@@ -16,13 +16,19 @@ function App() {
           <Nav />
           <img src={logo} className="App-logo" alt="logo" />
 
-          <Routes>
-            <Route path="/" element={<Home />} />
+          <Switch>
+            <Route path="/" exact>
+              <Home />
+            </Route>
 
-            <Route path="/todo" element={<ListTodo />} />
+            <Route path="/todo">
+              <ListTodo />
+            </Route>
 
-            <Route path="/about" element={<MyComponent />} />
-          </Routes>
+            <Route path="/about">
+              <MyComponent />
+            </Route>
+          </Switch>
         </header>
         <ToastContainer />
       </div>
